@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clock</title>
+</head>
+<style>
+    .clock{
+        width:500px;height:500px;border:20px solid #373F4A;border-radius: 50%;
+        position: fixed;
+        background: repeating-radial-gradient(#252C34,#333);
+        left:0;right:0;bottom:0;top:0;margin:auto;
+    }
+    .circle{
+        width:30px;height:30px;background: #000;border-radius: 50%;position: absolute;
+        right:0;left:0;top:0;bottom:0;
+        margin:auto;
+        z-index: 10;
+    }
+</style>
+<body>
+<div class="clock">
+    <div class="circle"></div>
+</div>
+</body>
+</html>
+<script>
+    window.onload=function(){
+        var clock=document.querySelector(".clock");
+        creatMac();
+        var hh=createPointer(8,100,"#000");
+        var mm=createPointer(6,160,"#000");
+        var ss=createPointer(2,210,"red");
+                move();
+        setInterval(move,1000);
+        function move(){
+            var times=new Date();
+            var hours=times.getHours();
+            var min=times.getMinutes();
+            var sec=times.getSeconds();
+            console.log(hours*30+0.5)
+            hh.style.transform="rotate("+(hours*30+min*0.5)+"deg)";
+            mm.style.transform="rotate("+min*6+"deg)";
+            ss.style.transform="rotate("+sec*6+"deg)";
+        }
+//      创建刻度
+        function creatMac(){
+            var w,h;
+            for(var i=0;i<60;i++){
+                if(i%5==0){
+                    w=8;h=20;
+                }else{
+                    w=4;h=10;
+                }
+                var div=document.createElement("div");
+                div.style.cssText="width:"+w+"px;height:"+h+"px;position:absolute;left:0;top:0;right:0;margin:auto;background:#fff;";
+                div.style.transform="rotate("+i*6+"deg)";
+                div.style.transformOrigin="center 250px"
+                clock.appendChild(div);
+            }
+        }
+//       创建指针
+        function createPointer(w,h,c,d){
+            var lefts=(500-w)/2;
+            var tops=500/2-h;
+            var div=document.createElement("div");
+            div.style.cssText="width:"+w+"px;height:"+h+"px;background:"+c+";position:absolute;left:"+lefts+"px;top:"+tops+"px;";
+            div.style.transformOrigin="center bottom"
+            div.style.transform="rotate("+d+"deg)";
+            clock.appendChild(div);
+            return div;
+        }
+    }
+</script>

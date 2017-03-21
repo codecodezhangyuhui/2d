@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>哆啦A梦</title>
+</head>
+<style>
+    .box{
+        width:600px;
+        height:600px;
+        position: absolute;
+        left:0;right:0;margin: auto;top:20px;
+        background: #eee;
+    }
+    .tou{
+        width:320px;height:290px;border-radius: 160px;border:2px solid #000;
+        position: absolute;
+        left:0;right:0;margin: auto;top:20px;
+        background: linear-gradient(195deg,#fff 0%,#0EACD5 50%);
+        box-shadow: 0px 10px 30px #333;
+    }
+    .lian{
+        position: absolute;
+        right:0;left:0;margin: auto;bottom:0;
+        width:262px;height:194px;border:2px solid #000; border-radius: 140px;
+        background: #fff;
+    }
+    .bozi{
+        width:220px;height:20px;border-radius: 20px;background: linear-gradient(to right,#6D0B00,#B53000,#6D0B00);
+        border:2px solid #000;
+        position: absolute;
+        top:290px;
+        left:0;right:0;margin:auto;
+        z-index: 100;
+    }
+    .Lyan{
+        width:76px;height:87px;border:2px solid #000;border-radius: 36px;
+        position: absolute;left:81px;top:50px;z-index: 99;background: #fff;
+    }
+    .Ryan{
+        width:76px;height:87px;border:2px solid #000;border-radius: 36px;
+        position: absolute;right:81px;top:50px;z-index: 99;background: #fff;
+    }
+    .Lyanzhu,.Ryanzhu{
+        width:16px;height:16px;background: #000;border-radius: 50%;
+        position: absolute;
+        top:54px;
+    }
+    .Lyanzhu{
+        right:10px;
+    }
+    .Ryanzhu{
+        left:10px;
+    }
+    .bizi{
+        width:30px;height:30px;border-radius: 50%;position: absolute;
+        left:0;right:0;margin:auto;top:32px;
+        border:2px solid #000;
+        background: #C93E00;
+        z-index: 100;
+    }
+    .bizidian{
+        width:10px;height:10px;
+        border-radius: 50%;
+        position: absolute;right:14px;top:-6px;
+        box-shadow: 10px 10px 5px #fff;
+    }
+    .shu{
+        width:3px;height:80px;background: #000;position: absolute;top:108px;left:-2px;
+    }
+    .zui{
+        width:180px;height:100px;border-bottom: 2px solid #000;border-radius: 50%;
+        position: absolute;right:-16px;
+        top:86px;
+    }
+    .huzi2{
+        width:60px;height:2px;background: #000;position: absolute;
+        left:-110px;top:120px;
+    }
+    .huzi3{
+        width:60px;height:2px;background: #000;position: absolute;
+        top:98px;
+        left:-106px;
+        transform: rotate(26deg);
+    }
+    .huzi4{
+        width:60px;height:2px;background: #000;position: absolute;
+        top:142px;
+        left:-106px;
+        transform: rotate(-26deg);
+    }
+    .Rhuzi{
+        position: absolute;
+        right:80px;
+        top:240px;
+        transform: rotate(180deg);
+    }
+    .shenti{
+        width:220px;
+        height:190px;
+        position: absolute;right:0;left:0;top:310px;margin:auto;
+    }
+    .gebo{
+        width:46px;height: 90px;border:2px solid #000;
+        background:#0080A5;
+        transform: rotate(50deg);
+        position: absolute;
+        left:-44px;
+        z-index: 0;
+        box-shadow: 0px 10px 30px #333;
+    }
+    .shou{
+        width:60px;height:60px;border:2px solid #000;border-radius: 50%;
+        position: absolute;
+        left:-90px;
+        top:50px;
+        background:linear-gradient(45deg,#aaa,#fff,#eee) ;
+    }
+    .Rgebo{
+        position: absolute;
+        right:30px;
+        top:36px;
+        transform: rotate(-100deg);
+    }
+    .Rgebo .gebo{
+        background: #07BEEA;
+        box-shadow: 0px 10px 30px #333;
+    }
+    .Rgebo .shou{
+        background:linear-gradient(120deg,#aaa,#fff,#eee) ;
+    }
+    .shenti2{
+        background: linear-gradient(to right,#0080A5,#07BEEA) ;
+        width:220px;
+        height:192px;
+        z-index: 99;
+        position: absolute;
+        top:312px;
+        left:0;right:0;margin:auto;
+    }
+    .shenti3{
+        width:216px;height:150px;
+        border:2px solid #000;
+        border-top:0;
+        position: absolute;left:0;right:0;margin:auto;
+        top:354px;
+        z-index: 101;
+    }
+    .dang{
+        width:20px;
+        height:20px;
+        border:2px solid #000;
+        border-radius: 50%;
+        position: absolute;
+        left:0;right:0;margin:auto;
+        top:492px;
+        z-index: 102;
+        background: #ccc;
+    }
+    .zhedang{
+        width:30px;
+        height:10px;
+        background: #eee;
+        position: absolute;
+        right:0;left:0;margin:auto;
+        top:506px;
+        z-index: 103;
+    }
+    .Ljiao{
+        width:126px;
+        height:30px;
+        border:2px solid #000;
+        border-radius:70px 50px 50px 30px;
+        position: absolute;
+        left:168px;
+        top:504px;
+        z-index: 104;
+        box-shadow: -10px 0px 20px #666;
+
+    }
+    .Rjiao{
+        width:126px;
+        height:30px;
+        border:2px solid #000;
+        border-radius:30px 50px 50px 70px;
+        position: absolute;
+        right:168px;
+        top:504px;
+        z-index: 104;
+        transform: rotate(180deg);
+        box-shadow: -10px 0px 20px #666;
+    }
+    .lingdang{
+        width:40px;height:40px;border:2px solid #000;border-radius: 50%;
+        position: absolute;left: 0;right: 0;margin: auto;
+        top:300px;
+        z-index: 200;
+        background:linear-gradient(to top,#B3AB04,#F5ED26);
+    }
+    .hengkuang{
+        width:40px;height:2px;border:2px solid #000;
+        position: absolute;left:-2px;
+        top:10px;
+    }
+    .dian{
+        width:12px;height:10px;background: #000;border-radius: 40px;
+        position: absolute;left:0;right:0;margin:auto;
+        top:20px;
+    }
+    .lingshu{
+        width:2px;height:10px;background: #000;position: absolute;
+        left:0;right:0;margin:auto;bottom:0;
+    }
+    .xiong{
+        width:172px;height:172px;border:2px solid #000;border-radius: 50%;
+        position: absolute;left:0;right:0;margin:auto;
+        z-index: 99;
+        background: #fff;
+        top:290px;
+    }
+    .xiong2{
+        width:130px;height: 130px;border: 2px solid #000;border-radius: 50%;position: absolute;
+        right:0;left:0;margin:auto;
+        top:20px;
+    }
+    .zhexiong{
+        background: #fff;
+        width:134px;height:60px;border-bottom: 2px solid #000;position: absolute;
+        left:0;right:0;margin:auto;
+        top:30px;
+        border-radius: 10px 10px 0 0;
+    }
+    .zhe2{
+        width:80px;height: 20px;background:#fff;
+        position: absolute;left:0;right:0;margin: auto;
+        z-index: 99;
+        top:310px;
+    }
+    .lingliang{
+        width:10px;
+        height:10px;
+        position: absolute;
+        left:0;top:0;
+        border-radius: 50%;
+        box-shadow: 22px 6px 5px #fff;
+    }
+</style>
+<body>
+<div class="box">
+    <div class="tou">
+        <div class="Lyan">
+            <div class="Lyanzhu"></div>
+        </div>
+        <div class="Ryan">
+            <div class="Ryanzhu"></div>
+            <div class="shu"></div>
+            <div class="zui"></div>
+            <div class="Lhuzi">
+                <div class="huzi2"></div>
+                <div class="huzi3"></div>
+                <div class="huzi4"></div>
+            </div>
+            <div class="Rhuzi">
+                <div class="huzi2"></div>
+                <div class="huzi3"></div>
+                <div class="huzi4"></div>
+            </div>
+        </div>
+        <div class="lian">
+            <div class="bizi">
+                <div class="bizidian"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="shenti">
+        <div class="Lgebo">
+            <div class="gebo"></div>
+            <div class="shou"></div>
+        </div>
+        <div class="Rgebo">
+            <div class="gebo"></div>
+            <div class="shou"></div>
+        </div>
+    </div>
+    <div class="shenti2"></div>
+    <div class="bozi"></div>
+    <div class="shenti3"></div>
+    <div class="dang"></div>
+    <div class="zhedang"></div>
+    <div class="Ljiao"></div>
+    <div class="Rjiao"></div>
+    <div class="lingdang">
+        <div class="hengkuang"></div>
+        <div class="dian"></div>
+        <div class="lingshu"></div>
+        <div class="lingliang"></div>
+    </div>
+    <div class="xiong">
+        <div class="xiong2"></div>
+        <div class="zhexiong"></div>
+
+    </div>
+    <div class="zhe2"></div>
+</div>
+
+</body>
+</html>
